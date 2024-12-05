@@ -1,0 +1,230 @@
+/* Estilos base */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #fff;
+  color: #5D8590;
+}
+
+/* Navbar */
+.navbar {
+  background: #eb5f33;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Header */
+
+/* Estilo general del header */
+header {
+  background: linear-gradient(to right, #eb5f33, #5D8590);
+  color: #fff;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin: 10px 0 30px;
+}
+
+/* Carrusel */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.carousel {
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.carousel-inner {
+  display: flex;
+  width: 500%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Ocultar los botones de radio */
+input[type="radio"] {
+  display: none;
+}
+
+/* Controles de navegación */
+.navigation-manual {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: 20px;
+}
+
+.manual-btn {
+  border: 2px solid white;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin: 0 10px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.manual-btn:hover {
+  background: white;
+}
+
+/* Estilo de las imágenes al seleccionar cada radio button */
+#radio1:checked~.carousel-inner {
+  transform: translateX(0%);
+}
+
+#radio2:checked~.carousel-inner {
+  transform: translateX(-20%);
+}
+
+#radio3:checked~.carousel-inner {
+  transform: translateX(-40%);
+}
+
+#radio4:checked~.carousel-inner {
+  transform: translateX(-60%);
+}
+
+#radio5:checked~.carousel-inner {
+  transform: translateX(-80%);
+}
+
+/* Estilo activo para los botones manuales */
+input[type="radio"]:checked+.carousel-inner+.navigation-manual label {
+  background-color: white;
+}
+
+/* Main */
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  color: #eb5f33;
+  font-size: 2rem;
+  border-bottom: 3px solid #eb5f33;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.section p,
+.section ul {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+ul li:before {
+  content: '●';
+  color: #eb5f33;
+  position: absolute;
+  left: 0;
+  font-size: 1.2rem;
+}
+
+/* Highlight box */
+.highlight {
+  background: #f9f9f9;
+  padding: 15px;
+  border-left: 5px solid #eb5f33;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+footer {
+  background: #5D8590;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}

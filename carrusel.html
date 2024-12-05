@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrusel Simple</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .carousel {
+      width: 100%;
+      max-width: 800px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
+    .carousel-inner {
+      display: flex;
+      width: 500%;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-item {
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* Ocultar los botones de radio */
+    input[type="radio"] {
+      display: none;
+    }
+
+    /* Controles de navegación */
+    .navigation-manual {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      bottom: 20px;
+    }
+
+    .manual-btn {
+      border: 2px solid white;
+      padding: 5px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin: 0 10px;
+      background: rgba(255, 255, 255, 0.5);
+    }
+
+    .manual-btn:hover {
+      background: white;
+    }
+
+    /* Estilo de las imágenes al seleccionar cada radio button */
+    #radio1:checked~.carousel-inner {
+      transform: translateX(0%);
+    }
+
+    #radio2:checked~.carousel-inner {
+      transform: translateX(-20%);
+    }
+
+    #radio3:checked~.carousel-inner {
+      transform: translateX(-40%);
+    }
+
+    #radio4:checked~.carousel-inner {
+      transform: translateX(-60%);
+    }
+
+    #radio5:checked~.carousel-inner {
+      transform: translateX(-80%);
+    }
+
+    /* Estilo activo para los botones manuales */
+    input[type="radio"]:checked+.carousel-inner+.navigation-manual label {
+      background-color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="carousel">
+    <!-- Botones de radio para seleccionar la imagen -->
+    <input type="radio" name="radio-btn" id="radio1" checked>
+    <input type="radio" name="radio-btn" id="radio2">
+    <input type="radio" name="radio-btn" id="radio3">
+    <input type="radio" name="radio-btn" id="radio4">
+    <input type="radio" name="radio-btn" id="radio5">
+
+    <!-- Imágenes del carrusel -->
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img src="assets/img/python2.png" alt="Imagen 1">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/img/python2.png" alt="Imagen 2">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/img/python2.png" alt="Imagen 3">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/img/python2.png" alt="Imagen 4">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/img/python2.png" alt="Imagen 5">
+      </div>
+    </div>
+
+    <!-- Controles manuales -->
+    <div class="navigation-manual">
+      <label for="radio1" class="manual-btn"></label>
+      <label for="radio2" class="manual-btn"></label>
+      <label for="radio3" class="manual-btn"></label>
+      <label for="radio4" class="manual-btn"></label>
+      <label for="radio5" class="manual-btn"></label>
+    </div>
+  </div>
+</body>
+
+</html>
